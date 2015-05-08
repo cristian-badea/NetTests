@@ -18,14 +18,14 @@ namespace Poker
             var handDiscriminator=new HandDiscriminator();
             Card[] cards = new Card[] 
             {
-                new Card(1,"Pica"),
-                new Card(2,"Trefla"),
-                new Card(2,"Pica"),
-                new Card(4,"Pica"),
-                new Card(5,"Pica"),
+                new Card(1,CardSimbol.Pica),
+                new Card(2,CardSimbol.Trefla),
+                new Card(2,CardSimbol.Pica),
+                new Card(4,CardSimbol.Pica),
+                new Card(5,CardSimbol.Pica),
             };
             var handType=handDiscriminator.GetHandType(cards);
-            handType.ShouldBe("One Pair");
+            handType.ShouldBe(HandType.Pereche);
         }
 
         public void TwoPairs()
@@ -33,14 +33,14 @@ namespace Poker
             var handDiscriminator = new HandDiscriminator();
             Card[] cards = new Card[] 
             {
-                new Card(1,"Pica"),
-                new Card(2,"Pica"),
-                new Card(2,"Romb"),
-                new Card(4,"Pica"),
-                new Card(4,"Pica"),
+                new Card(1,CardSimbol.Pica),
+                new Card(2,CardSimbol.Pica),
+                new Card(2,CardSimbol.Romb),
+                new Card(4,CardSimbol.Pica),
+                new Card(4,CardSimbol.Pica),
             };
             var handType = handDiscriminator.GetHandType(cards);
-            handType.ShouldBe("Two Pairs");
+            handType.ShouldBe(HandType.DouaPerechi);
         }
 
         public void Cui()
@@ -48,14 +48,14 @@ namespace Poker
             var handDiscriminator = new HandDiscriminator();
             Card[] cards = new Card[] 
             {
-                new Card(2,"Pica"),
-                new Card(2,"Pica"),
-                new Card(2,"Inima"),
-                new Card(4,"Pica"),
-                new Card(5,"Pica"),
+                new Card(2,CardSimbol.Pica),
+                new Card(2,CardSimbol.Pica),
+                new Card(2,CardSimbol.Inima),
+                new Card(4,CardSimbol.Pica),
+                new Card(5,CardSimbol.Pica),
             };
             var handType = handDiscriminator.GetHandType(cards);
-            handType.ShouldBe("Cui");   
+            handType.ShouldBe(HandType.Cui);   
         }
 
         public void Fullhouse()
@@ -63,14 +63,14 @@ namespace Poker
             var handDiscriminator = new HandDiscriminator();
             Card[] cards = new Card[] 
             {
-                new Card(2,"Pica"),
-                new Card(2,"Pica"),
-                new Card(2,"Pica"),
-                new Card(4,"Pica"),
-                new Card(4,"Pica"),
+                new Card(2,CardSimbol.Pica),
+                new Card(2,CardSimbol.Pica),
+                new Card(2,CardSimbol.Pica),
+                new Card(4,CardSimbol.Pica),
+                new Card(4,CardSimbol.Pica),
             };
             var handType = handDiscriminator.GetHandType(cards);
-            handType.ShouldBe("FullHouse");   
+            handType.ShouldBe(HandType.Full);   
         }
 
         public void TestCareu()
@@ -78,14 +78,14 @@ namespace Poker
             var handDiscriminator = new HandDiscriminator();
             Card[] cards = new Card[] 
             {
-                new Card(3,"Pica"),
-                new Card(3,"Pica"),
-                new Card(3,"Pica"),
-                new Card(3,"Pica"),
-                new Card(5,"Pica"),
+                new Card(3,CardSimbol.Pica),
+                new Card(3,CardSimbol.Pica),
+                new Card(3,CardSimbol.Pica),
+                new Card(3,CardSimbol.Pica),
+                new Card(5,CardSimbol.Pica),
             };
             var handType = handDiscriminator.GetHandType(cards);
-            handType.ShouldBe("Careu");   
+            handType.ShouldBe(HandType.Careu);   
         }
 
         public void TestChinta()
@@ -93,14 +93,14 @@ namespace Poker
             var handDiscriminator = new HandDiscriminator();
             Card[] cards = new Card[] 
             {
-                new Card(2,"Pica"),
-                new Card(3,"Trefla"),
-                new Card(1,"Pica"),
-                new Card(5,"Romb"),
-                new Card(4,"Pica"),
+                new Card(2,CardSimbol.Pica),
+                new Card(3,CardSimbol.Trefla),
+                new Card(1,CardSimbol.Pica),
+                new Card(5,CardSimbol.Romb),
+                new Card(4,CardSimbol.Pica),
             };
             var handType = handDiscriminator.GetHandType(cards);
-            handType.ShouldBe("Chinta"); 
+            handType.ShouldBe(HandType.Chinta); 
 
         }
 
@@ -108,47 +108,47 @@ namespace Poker
         {
             Card[] cards = new Card[] 
             {
-                new Card(2,"Pica"),
-                new Card(1,"Pica"),
-                new Card(5,"Pica"),
-                new Card(8,"Pica"),
-                new Card(6,"Pica"),
+                new Card(2,CardSimbol.Pica),
+                new Card(1,CardSimbol.Pica),
+                new Card(5,CardSimbol.Pica),
+                new Card(8,CardSimbol.Pica),
+                new Card(6,CardSimbol.Pica),
             };
 
             var handDiscriminator = new HandDiscriminator();
             var handType = handDiscriminator.GetHandType(cards);
 
-            handType.ShouldBe("Culoare");
+            handType.ShouldBe(HandType.Culoare);
         }
         public void ChintaCuloare()
         {
             Card[] cards = new Card[] 
             {
-                new Card(1,"Pica"),
-                new Card(2,"Pica"),
-                new Card(3,"Pica"),
-                new Card(4,"Pica"),
-                new Card(5,"Pica"),
+                new Card(1,CardSimbol.Pica),
+                new Card(2,CardSimbol.Pica),
+                new Card(3,CardSimbol.Pica),
+                new Card(4,CardSimbol.Pica),
+                new Card(5,CardSimbol.Pica),
             };
             var handDiscriminator = new HandDiscriminator();
             var handType = handDiscriminator.GetHandType(cards);
 
-            handType.ShouldBe("Chinta Culoare");
+            handType.ShouldBe(HandType.ChintaCuloare);
         }
         public void Nimic()
         {
             Card[] cards = new Card[] 
             {
-                new Card(1,"Pica"),
-                new Card(7,"Romb"),
-                new Card(11,"Trefla"),
-                new Card(3,"Pica"),
-                new Card(13,"Inima"),
+                new Card(1,CardSimbol.Pica),
+                new Card(5,CardSimbol.Romb),
+                new Card(3,CardSimbol.Trefla),
+                new Card(4,CardSimbol.Pica),
+                new Card(13,CardSimbol.Inima),
             };
             var handDiscriminator = new HandDiscriminator();
             var handType = handDiscriminator.GetHandType(cards);
 
-            handType.ShouldBe("Nimic");
+            handType.ShouldBe(HandType.Nimic);
         }
     }
 }

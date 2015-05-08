@@ -10,7 +10,7 @@ namespace Poker
 {
     public class HandDiscriminator
     {
-        public string GetHandType(Card[] cards)
+        public HandType GetHandType(Card[] cards)
         {
             //verificam chinta culoare
             var sortedcards = cards.OrderBy(card => card.valoare);
@@ -23,7 +23,7 @@ namespace Poker
 
             if (isCuloare & ischinta)
             {
-                return "Chinta Culoare";
+                return HandType.ChintaCuloare;
             }
 
             //verificam Careu
@@ -32,7 +32,7 @@ namespace Poker
             
             if (careu.Count() == 1)
             {
-                return "Careu";
+                return HandType.Careu;
             }
 
             //verificam full
@@ -43,7 +43,7 @@ namespace Poker
             {
                 if (pairedCardGroups.Count() == 1)
                 {
-                    return "FullHouse";
+                    return HandType.Full;
                 }
                 
             }
@@ -51,36 +51,48 @@ namespace Poker
             //verificam culoare
             if (isCuloare)
             {
-                return "Culoare";
+                return HandType.Culoare;
             }
 
             //verificam chinta
             if (ischinta)
             {
-                return "Chinta";
+                return HandType.Chinta;
             }
 
             //verificam Cui
             if (cuie.Count() == 1)
             {
-                return "Cui";
+                return HandType.Cui;
             }
 
             //verificam 2 perechi
             if (pairedCardGroups.Count() == 2)
             {
-                return "Two Pairs";
+                return HandType.DouaPerechi;
             }
 
            //verificam 1 pereche
 
             if (pairedCardGroups.Count() == 1)
             {
-                return "One Pair";
+                return HandType.Pereche;
             }
             
             //daca am ajuns aici , atunci avem nimic
-            return "Nimic";
+            return HandType.Nimic;
         }
+    }
+    public enum HandType
+    {
+        ChintaCuloare, 
+        Careu, 
+        Full, 
+        Culoare, 
+        Chinta, 
+        Cui, 
+        DouaPerechi, 
+        Pereche, 
+        Nimic
     }
 }
