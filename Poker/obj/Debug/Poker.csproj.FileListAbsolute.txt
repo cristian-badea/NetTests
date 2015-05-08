@@ -1,0 +1,8 @@
+C:\Users\Cristian\Source\Repos\NetTests\Poker\obj\Debug\Poker.csprojResolveAssemblyReference.cache
+C:\Users\Cristian\Source\Repos\NetTests\Poker\bin\Debug\Poker.dll
+C:\Users\Cristian\Source\Repos\NetTests\Poker\bin\Debug\Poker.pdb
+C:\Users\Cristian\Source\Repos\NetTests\Poker\bin\Debug\Fixie.dll
+C:\Users\Cristian\Source\Repos\NetTests\Poker\bin\Debug\Shouldly.dll
+C:\Users\Cristian\Source\Repos\NetTests\Poker\bin\Debug\Shouldly.pdb
+C:\Users\Cristian\Source\Repos\NetTests\Poker\obj\Debug\Poker.dll
+C:\Users\Cristian\Source\Repos\NetTests\Poker\obj\Debug\Poker.pdb

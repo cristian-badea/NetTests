@@ -19,7 +19,7 @@ namespace Poker
             Card[] cards = new Card[] 
             {
                 new Card(1,"Pica"),
-                new Card(2,"Pica"),
+                new Card(2,"Trefla"),
                 new Card(2,"Pica"),
                 new Card(4,"Pica"),
                 new Card(5,"Pica"),
@@ -35,7 +35,7 @@ namespace Poker
             {
                 new Card(1,"Pica"),
                 new Card(2,"Pica"),
-                new Card(2,"Pica"),
+                new Card(2,"Romb"),
                 new Card(4,"Pica"),
                 new Card(4,"Pica"),
             };
@@ -50,14 +50,12 @@ namespace Poker
             {
                 new Card(2,"Pica"),
                 new Card(2,"Pica"),
-                new Card(2,"Pica"),
+                new Card(2,"Inima"),
                 new Card(4,"Pica"),
                 new Card(5,"Pica"),
             };
             var handType = handDiscriminator.GetHandType(cards);
             handType.ShouldBe("Cui");   
-
-
         }
 
         public void Fullhouse()
