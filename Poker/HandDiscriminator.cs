@@ -8,9 +8,9 @@ namespace Poker
 {
     public class HandDiscriminator
     {
-        public string GetHandType(int[] hand)
+        public string GetHandType(Card[] cards)
         {
-            var cardGroups = hand.GroupBy(card => card);
+            var cardGroups = cards.GroupBy(card => card.valoare);
             var pairedCardGroups = cardGroups.Where(cardGroup => cardGroup.Count() == 2);
 
             if (pairedCardGroups.Count() == 2)
@@ -40,9 +40,23 @@ namespace Poker
                 return "Careu";
             }
 
-            var sortedcards = hand.OrderBy(card => card);
+            var sortedcards = cards.OrderBy(card => card.valoare);
             var pairs = sortedcards.ConsecutivePairs();
-            var ischinta = pairs.All(pair => (pair.Item2 - pair.Item1 == 1));
+            var ischinta = pairs.All(pair => (pair.Item2.valoare - pair.Item1.valoare == 1));
+
+            var cardsValues = cards.Select(card => card.valoare).ToArray();
+            var distinctSimbols = cards.Select(card => card.simbol).Distinct();
+            var isCuloare = distinctSimbols.Count() == 1;
+           
+            if(isCuloare & ischinta)
+            {
+                return "Chinta Culoare";
+            }
+            
+            if (isCuloare)
+            {
+                return "Culoare";
+            }
 
             if (ischinta)
             {
@@ -50,23 +64,8 @@ namespace Poker
             }
 
 
-            throw new NotImplementedException();
+            return "nimic";
 
-        }
-
-        public string GetHandType(Card[] cards)
-        {
-            var cardsValues = cards.Select(card => card.valoare).ToArray();
-            var distinctSimbols = cards.Select(card => card.simbol).Distinct();
-            if (distinctSimbols.Count() == 1)
-            {
-                if (GetHandType(cardsValues) == "Chinta")
-                {
-                    return "Chinta Culoare";
-                }
-                return "Culoare";
-            }
-            throw new NotImplementedException();
         }
     }
 }
