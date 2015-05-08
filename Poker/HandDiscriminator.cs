@@ -64,7 +64,7 @@ namespace Poker
             }
 
 
-            return "nimic";
+            return "Nimic";
 
         }
     }

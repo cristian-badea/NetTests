@@ -137,5 +137,20 @@ namespace Poker
 
             handType.ShouldBe("Chinta Culoare");
         }
+        public void Nimic()
+        {
+            Card[] cards = new Card[] 
+            {
+                new Card(1,"Pica"),
+                new Card(7,"Romb"),
+                new Card(11,"Trefla"),
+                new Card(3,"Pica"),
+                new Card(13,"Inima"),
+            };
+            var handDiscriminator = new HandDiscriminator();
+            var handType = handDiscriminator.GetHandType(cards);
+
+            handType.ShouldBe("Nimic");
+        }
     }
 }
